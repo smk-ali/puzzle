@@ -108,11 +108,11 @@ export const Tutorial: FC = observer(function () {
           />
         )}
       </View>
-      {board.isInitialized && (
+      {/* {board.isInitialized && (
         <BottomNav animValue={fadeInterfaceAnim.value}>
           <Button label="menu" onPress={handleMenuPress} />
         </BottomNav>
-      )}
+      )} */}
     </View>
   );
 });

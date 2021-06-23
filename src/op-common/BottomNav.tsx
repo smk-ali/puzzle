@@ -20,7 +20,7 @@ export const BottomNav: FC<BottomNavProps> = function ({
 };
 
 const marginTop = scale(10);
-const marginBottom = scale(14);
+const marginBottom = scale(24);
 
 const styles = StyleSheet.create({
   root: {

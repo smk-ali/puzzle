@@ -24,69 +24,6 @@
             "score": 0
         },
         {
-            "data": [
-                "  43",
-                "    ",
-                "    ",
-                "4   "
-            ],
-            "name": "tu-puzzle-1",
-            "type": "puzzle",
-            "title": "Lines can be vertical or horizontal, but they can't overlap.",
-            "message": "Extend each number into a valid line.",
-            "score": 0
-        },
-        {
-            "data": [
-                " .  ",
-                "    ",
-                " 3  "
-            ],
-            "name": "tu-puzzle-2",
-            "type": "puzzle",
-            "title": "Every dot of a puzzle must be covered with a line.",
-            "message": "Extend the \"3\" to cover the dot.",
-            "score": 0
-        },
-        {
-            "data": [
-                "    ",
-                ".3. ",
-                "    "
-            ],
-            "name": "tu-puzzle-3",
-            "type": "puzzle",
-            "title": "Lines can extend in both orientations.",
-            "message": "Cover both of the dots by drawing a line from the \"3\" to the left, and then from the \"3\" to the right.",
-            "score": 0
-        },
-        {
-            "data": [
-                "2  .",
-                "3  4",
-                "    ",
-                ".   "
-            ],
-            "name": "tu-puzzle-4",
-            "type": "puzzle",
-            "title": "All together now.",
-            "message": "Extend all the numbers in lines and cover the dots with at least one of them.",
-            "score": 0
-        },
-        {
-            "data": [
-                " 4 .2.",
-                "   .2.",
-                "      ",
-                " ..3 3"
-            ],
-            "name": "tu-puzzle-5",
-            "type": "puzzle",
-            "title": "Here's a real puzzle.",
-            "message": "Take it slowly.\nPuzzles have only one valid solution.\nYou should decide your moves based on logical deduction instead of just guessing.",
-            "score": 0
-        },
-        {
             "data": null,
             "name": "tu-end",
             "type": "message",

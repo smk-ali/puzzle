@@ -76,7 +76,9 @@ export const Board: FC<BoardProps> = observer(function ({
     const disposeClearedReaction = reaction(
       () => board.cleared,
       (didSucceed) => {
-        if (didSucceed) animateSuccess();
+        if (didSucceed) {
+          animateSuccess();
+        }
       }
     );
     return () => {

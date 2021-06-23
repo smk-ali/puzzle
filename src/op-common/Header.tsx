@@ -26,19 +26,21 @@ export const Header: FC<HeaderProps> = observer(function ({
       style={[styles.root, animations.fadeSlideTop(fadeAnimValue)]}
     >
       <Animated.View style={styles.identifier}>
-        <Text weight="bold" secondary style={[styles.text, textStyle]}>
-          {prefix}{" "}
-        </Text>
-        <Text weight="bold" style={[styles.text, textStyle]}>
-          {name}
-        </Text>
+        {/* <Animated.View style={styles.textIdentifier}>
+          <Text weight="bold" secondary style={[styles.text, textStyle]}>
+            {prefix}{" "}
+          </Text>
+          <Text weight="bold" style={[styles.text, textStyle]}>
+            {name}
+          </Text>
+        </Animated.View> */}
       </Animated.View>
     </Animated.View>
   );
 });
 
-const marginTop = metrics.screenMargin;
-const marginBottom = metrics.screenMargin / 2;
+const marginTop = metrics.topMargin;
+const marginBottom = metrics.topMargin;
 const fontSize = scale(34);
 
 const styles = StyleSheet.create({
@@ -49,10 +51,16 @@ const styles = StyleSheet.create({
     zIndex: 200,
   },
   identifier: {
-    flexDirection: "row",
+    flexDirection: "column",
   },
   text: {
     fontSize,
+  },
+  textIdentifier: {
+    flexDirection: "row",
+  },
+  logo: {
+    alignSelf: "flex-start",
   },
 });
 

@@ -1,6 +1,6 @@
 {
   "eslint.autoFixOnSave": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "eslint.enable": true,
   "eslint.validate": [
     "javascript",

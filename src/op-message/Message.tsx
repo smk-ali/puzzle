@@ -15,6 +15,7 @@ export const Message: FC = function () {
 
   // Routing setup
   const navigateToHome = () => router.changeRoute("home");
+  const navigateToChallenge = () => router.changeRoute("intro");
   useHardwareBackButton(navigateToHome);
 
   // Animations setup
@@ -49,9 +50,11 @@ export const Message: FC = function () {
   const handleButtonPress = () => {
     fadeOut().start(() => {
       stats.updateCompletedPuzzles("tutorial", 0);
-      navigateToHome();
+      navigateToChallenge();
     });
   };
+
+  console.log("real puzzle id: ", puzzle.id);
 
   return (
     <View style={styles.root}>
@@ -76,7 +79,8 @@ export const Message: FC = function () {
         </Text>
       </View>
       <BottomNav animValue={fadeBottomAnim.value}>
-        <Button onPress={handleButtonPress} label="menu" />
+        {/* <Button onPress={handleButtonPress} label="menu" /> */}
+        <Button onPress={handleButtonPress} label="next" />
       </BottomNav>
     </View>
   );

@@ -16,9 +16,10 @@ export type Route =
   | "game"
   | "intro"
   | "tutorial"
+  | "finish"
   | "success"
   | "stats";
-export type PuzzleMode = "tutorial" | "small" | "medium" | "large";
+export type PuzzleMode = "tutorial" | "small" | "medium" | "large" | "finish";
 
 const sum = (a: number, b: number) => a + b;
 
@@ -52,12 +53,16 @@ class RouterStore {
     switch (route) {
       case "intro": {
         if (puzzleMode !== "continue") {
-          this.root.puzzle.setRandomPuzzle(puzzleMode);
+          this.root.puzzle.setNextPuzzle(puzzleMode);
         }
         break;
       }
       case "tutorial": {
         this.root.puzzle.setPuzzle("tutorial", 0);
+        break;
+      }
+      case "finish": {
+        this.root.puzzle.setPuzzle("finish", 0);
         break;
       }
       case "home":
@@ -102,6 +107,7 @@ class PuzzleStore {
       tutorialMessage: computed,
       setPuzzle: action,
       setRandomPuzzle: action,
+      setNextPuzzle: action,
       nextPuzzle: action,
       onPuzzleCompleted: action,
       reset: action,
@@ -123,9 +129,10 @@ class PuzzleStore {
   get prefix() {
     const modePrefix = {
       tutorial: "xs",
-      small: "sm",
-      medium: "md",
-      large: "lg",
+      small: "1st",
+      medium: "2nd",
+      large: "3rd",
+      finish: "fin",
     };
     return this.mode ? modePrefix[this.mode] : "ko";
   }
@@ -186,6 +193,23 @@ class PuzzleStore {
     this.setPuzzle(mode, randomPuzzleIndex);
   }
 
+  setNextPuzzle(mode: PuzzleMode = this.mode || "tutorial") {
+    const nextMode = {
+      tutorial: "small",
+      small: "medium",
+      medium: "large",
+      large: "finish",
+      finish: "tutorial",
+    };
+    mode = nextMode[mode] as PuzzleMode;
+    const randomPuzzleIndex = pickRandomPuzzle({
+      allPuzzlesLength: puzzles[mode].length,
+      playedHistory: this.root.stats.playedPuzzles[mode],
+      completedHistory: this.root.stats.completedPuzzles[mode],
+    });
+    this.setPuzzle(mode, randomPuzzleIndex);
+  }
+
   nextPuzzle() {
     if (this.index !== undefined) this.index = this.index + 1;
   }
@@ -205,6 +229,7 @@ const emptyPuzzleHistory: Record<PuzzleMode, number[]> = {
   small: [],
   medium: [],
   large: [],
+  finish: [],
 };
 
 class StatsStore {

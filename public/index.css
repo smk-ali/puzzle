@@ -11,22 +11,17 @@
 }
 
 @font-face {
-  font-family: "Averta-Bold";
-  src: url("fonts/Averta-Bold.woff2") format("woff2"),
-    url("fonts/Averta-Bold.woff") format("woff");
+  font-family: "Source-Sans-Bold";
+  src: url("fonts/SourceSans3-Bold.woff2") format("woff2"),
+    url("fonts/SourceSans3-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Averta-Semibold";
-  src: url("fonts/Averta-Semibold.woff2") format("woff2"),
-    url("fonts/Averta-Semibold.woff") format("woff");
+  font-family: "Source-Sans-Regular";
+  src: url("fonts/SourceSans3-Regular.woff2") format("woff2"),
+    url("fonts/SourceSans3-Regular.woff") format("woff");
 }
 
-@font-face {
-  font-family: "Averta-Regular";
-  src: url("fonts/Averta-Regular.woff2") format("woff2"),
-    url("fonts/Averta-Regular.woff") format("woff");
-}
 
 html,
 body,

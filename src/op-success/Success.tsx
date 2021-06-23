@@ -48,7 +48,7 @@ export const Success: FC = observer(function () {
       navigateToHome();
     });
   };
-  const handleNewPuzzlePress = () => {
+  const handleNextPuzzlePress = () => {
     if (interactionsDisabledRef.current) return;
     interactionsDisabledRef.current = true;
     fadeRootOut().start(startNewGame);
@@ -63,20 +63,14 @@ export const Success: FC = observer(function () {
   return (
     <Animated.View style={[styles.root, animations.fade(fadeRootAnim.value)]}>
       <KeepAwake />
-      {puzzle.increasesScore && (
+      {/* {puzzle.increasesScore && (
         <Score
           score={`+${puzzle.score}`}
           animValue={fadeScoreAnim.value}
           style={scoreStyle}
         />
-      )}
+      )} */}
       <View style={styles.middle}>
-        <Header
-          prefix={puzzle.prefix}
-          name={puzzle.name}
-          fadeAnimValue={fadeTitleAnim.value}
-          fontSize={fitFontSize}
-        />
         <Text
           weight="semibold"
           style={[
@@ -88,8 +82,8 @@ export const Success: FC = observer(function () {
         </Text>
       </View>
       <BottomNav animValue={fadeBottomNavAnim.value}>
-        <Button label="Menu" onPress={handleMenuPress} />
-        <Button label="New Puzzle" onPress={handleNewPuzzlePress} />
+        {/* <Button label="Menu" onPress={handleMenuPress} /> */}
+        <Button label="Next" onPress={handleNextPuzzlePress} />
       </BottomNav>
     </Animated.View>
   );
@@ -103,6 +97,7 @@ const styles = StyleSheet.create({
   middle: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
   },
   textCompleted: {
     fontSize: scale(36),

@@ -43,9 +43,10 @@ export const Intro: FC = function () {
   };
 
   // Split the title into multiple charaters to animate them asynchronously
-  const fitFontSize = scaleTextToFit(`${puzzle.prefix} ${puzzle.name}`);
+  const name = "level";
+  const fitFontSize = scaleTextToFit(`${puzzle.prefix} ${name}`);
   const digitList = puzzle.prefix.split("");
-  const letterList = puzzle.name.split("");
+  const letterList = name.split("");
   const chars = digitList
     .map((digit) => ({ type: "digit", value: digit }))
     .concat({ type: "space", value: " " })

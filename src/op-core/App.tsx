@@ -43,7 +43,6 @@ export const App: FC = function () {
   });
   return (
     <>
-      <StatusBar hidden />
       <Main />
     </>
   );

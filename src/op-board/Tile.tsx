@@ -116,7 +116,8 @@ export const Tile: FC<Props> = observer(function (props) {
   // Text style
   const textStyle: TextStyle = {};
   if (cell.value === "." && cell.orientation === "none") {
-    textStyle.color = colors.primary[0];
+    // textStyle.color = colors.primary[0];
+    textStyle.color = "#fff";
   } else {
     textStyle.color = "#fff";
   }
@@ -155,7 +156,7 @@ export const Tile: FC<Props> = observer(function (props) {
 
   // Hover style
   const hoverStyle: ViewStyle = {};
-  hoverStyle.backgroundColor = colors.primary[9];
+  hoverStyle.backgroundColor = colors.primary[1];
 
   // Symbol
   const symbol = cell.value === "." ? "•" : cell.value;

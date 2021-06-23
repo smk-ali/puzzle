@@ -97,11 +97,11 @@ export const Game: FC = observer(function () {
   return (
     <Animated.View style={[styles.root, animations.fade(fadeRootAnim.value)]}>
       <KeepAwake />
-      <Header
+      {/* <Header
         prefix={puzzle.prefix}
         name={puzzle.name}
         fadeAnimValue={fadeInterfaceAnim.value}
-      />
+      /> */}
       <View style={styles.boardWrapper}>
         {puzzle.data && (
           <Board
@@ -113,7 +113,7 @@ export const Game: FC = observer(function () {
         )}
       </View>
       <BottomNav animValue={fadeInterfaceAnim.value}>
-        <Button label="Menu" onPress={handleMenuPress} />
+        {/* <Button label="Menu" onPress={handleMenuPress} /> */}
         <Button label="Reset" onPress={handleResetPress} />
       </BottomNav>
     </Animated.View>

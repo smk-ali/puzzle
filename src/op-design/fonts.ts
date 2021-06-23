@@ -8,19 +8,13 @@ import { useAvertaFont } from "op-config";
 // variable.
 const primaryFont = {
   regular: {
-    fontFamily: useAvertaFont ? "Averta-Regular" : undefined,
-    fontWeight: "400",
+    fontFamily: "Source-Sans-Regular",
   },
   semibold: {
-    fontFamily: useAvertaFont ? "Averta-Semibold" : undefined,
-    fontWeight: "500",
+    fontFamily: "Source-Sans-Bold",
   },
   bold: {
-    fontFamily: useAvertaFont ? "Averta-Bold" : undefined,
-    fontWeight: Platform.select({
-      native: "600",
-      default: "500", // On the web this alligns the Safari and Chrome rendering
-    }),
+    fontFamily: "Source-Sans-Bold",
   },
 };
 

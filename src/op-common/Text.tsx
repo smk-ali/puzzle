@@ -22,7 +22,7 @@ export const Text: FC<TextProps> = function ({
 }) {
   const colors = useColors();
   const font = fonts[family][weight];
-  const color = secondary ? colors.primary[5] : colors.primary[0];
+  const color = secondary ? colors.primary[6] : colors.primary[1];
   return (
     <Animated.Text style={[{ ...font, color }, styles.text, style]}>
       {children}

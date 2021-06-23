@@ -62,27 +62,8 @@ export const Home: FC = observer(function () {
   };
   const menuItems: MenuItem[] = [
     {
-      label: "tutorial",
+      label: "start",
       value: "tutorial",
-      onPress: handleItemPress,
-      highlighted: !canContinue,
-      starred: !stats.tutorialCompleted && !canContinue,
-    },
-    {
-      label: "small",
-      value: "small",
-      onPress: handleItemPress,
-      highlighted: !canContinue,
-    },
-    {
-      label: "medium",
-      value: "medium",
-      onPress: handleItemPress,
-      highlighted: !canContinue,
-    },
-    {
-      label: "large",
-      value: "large",
       onPress: handleItemPress,
       highlighted: !canContinue,
     },
@@ -123,15 +104,9 @@ export const Home: FC = observer(function () {
           items={menuItems}
         />
       </View>
-      <Score
-        animValue={menuAnim.value}
-        onPress={isMenuDisabled ? undefined : handleScorePress}
-        score={stats.score}
-        style={scoreStyle}
-      />
-      {Platform.OS === "web" && (
+      {/* {Platform.OS === "web" && (
         <About animValue={menuAnim.value} style={styles.about} />
-      )}
+      )} */}
     </Animated.View>
   );
 });
